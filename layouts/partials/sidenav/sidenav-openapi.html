@@ -1,0 +1,28 @@
+<aside class="sidenav sidenav-api">
+    <div class="row sticky">
+        <div class="col">
+            <a href="{{ "" | absLangURL }}"><h4>{{ i18n "datadog_docs" }}</h4></a>
+            <div class="sidenav-nav">
+                <ul class="list-unstyled">
+                    {{ $dot := . }}
+                    {{ $d := $dot.Site.Data.datadog_api_spec }}
+
+                    {{ range $k, $v := (index $d "tags") }}
+                      <li>
+                        <a href="#{{ $v.name | urlize }}"><span>{{ $v.name }}</span></a>
+                        <ul>
+                        {{ range $path_key, $path_object := $d.paths }}
+                          {{ range $action := $path_object }}
+                            {{ if in $action.tags $v.name }}
+                              <li><a href="#{{ $action.summary | urlize }}">{{ $action.summary }}</a></li>
+                            {{ end }}
+                          {{ end }}
+                        {{ end }}
+                        </ul>
+                      </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

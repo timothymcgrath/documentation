@@ -1,0 +1,92 @@
+{{ $dot := . }}
+{{ $d := $dot.Site.Data.datadog_api_spec }}
+{{ $pathToModels := (print "models/") }}
+{{ $pathToCode := (print "examples/") }}
+
+<h1>{{ $d.info.title }} v{{ $d.info.version }}</h1>
+
+{{ range $k, $v := (index $d "tags") }}
+  <h2 id="{{ $v.name | urlize }}"><a href="#{{ $v.name | urlize }}">{{ $v.name }}</a></h2>
+  <p>{{ ($v.description | default "") | markdownify }}</p>
+
+  {{ range $path_key, $path_object := $d.paths }}
+      {{ range $action_type, $action := $path_object }}
+        {{ if in $action.tags $v.name }}
+            <div class="action mb-5">
+              <h3 id="{{ $action.summary | urlize }}"><a href="#{{ $action.summary | urlize }}">{{ $action.summary }}</a></h3>
+              <h5>{{ $action_type }} {{ $path_key }}</h5>
+              {{ $action.description | markdownify }}
+
+              <!-- request -->
+              <h4>Request</h4>
+              {{ $action.requestBody.description }}
+
+              <p><strong>MODEL</strong></p>
+              <!-- load a model/*.md file -->
+              {{ range $content := $action.requestBody.content }}
+                  {{ range $schema := $content }}
+                    {{ $ref := (index $schema "$ref") }}
+                    {{ $refkey := replace $ref "#/components/schemas/" "" }}
+                    {{ with $refkey }}
+
+                      {{ $headless := $dot.GetPage $pathToModels }}
+                      {{ $modelFile := (print $refkey ".md") }}
+                      {{ $reusablePages := $headless.Resources.Match $modelFile }}
+                      {{ range $reusablePages }}
+                          {{ .Content }}
+                      {{ end }}
+
+                    {{ end }}
+                  {{ end }}
+              {{ end }}
+
+              <p><strong>EXAMPLE</strong></p>
+              <!-- load a example/*.* file -->
+              {{ $headless := $dot.GetPage $pathToCode }}
+              {{ $codeFile := (print $action.operationId ".sh") }}
+              {{ $reusableCode := $headless.Resources.Match $codeFile }}
+              {{ range $reusableCode }}
+                  {{ highlight .Content "bash" "" }}
+              {{ end }}
+
+              {{/*
+                {{ range $content := $action.requestBody.content }}
+                    {{ range $schema := $content }}
+                      {{ $ref := (index $schema "$ref") }}
+                      {{ $refkey := replace $ref "#/components/schemas/" "" }}
+                      {{ with $refkey }}
+                        {{ highlight ((index $d.components.schemas $refkey) | jsonify) "json" "" }}
+                      {{ end }}
+                    {{ end }}
+                {{ end }}
+              */}}
+
+              <!-- response -->
+              <h4>Response</h4>
+              {{ range $response_code, $response := $action.responses }}
+                  <a class="mb-1 mr-1 btn btn-sm-tag btn-outline-secondary {{ if eq $response_code "200"}}active{{end}}" href="#{{ $action.operationId }}-{{ $response_code }}" role="tab" data-toggle="tab">{{ $response_code }}</a>
+              {{ end }}
+
+              <!-- response pane -->
+              <div class="tab-content">
+                {{ range $response_code, $response := $action.responses }}
+                  <div role="tabpanel" class="tab-pane fade {{ if eq $response_code "200"}}in active{{end}}" id="{{ $action.operationId }}-{{ $response_code }}">
+                    {{ range $content := $response.content }}
+                      {{ range $schema := $content }}
+                        {{ $ref := (index $schema "$ref") }}
+                        {{ $refkey := replace $ref "#/components/schemas/" "" }}
+                        {{ with $refkey }}
+                          {{ highlight ((index $d.components.schemas $refkey) | jsonify) "json" "" }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+
+            </div>
+        {{ end }}
+      {{ end }}
+  {{ end }}
+  <hr/>
+{{ end }}
