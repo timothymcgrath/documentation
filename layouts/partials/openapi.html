@@ -1,5 +1,5 @@
 {{ $dot := . }}
-{{ $d := $dot.Site.Data.datadog_api_spec }}
+{{ $d := $dot.Site.Data.api.v1.full_spec }}
 {{ $pathToModels := (print "models/") }}
 {{ $pathToCode := (print "examples/") }}
 
