@@ -50,8 +50,11 @@ var log = new LoggerConfiguration()
     <member value="message:messageobject" />
     <!--add raw message-->
 
-    <!-- Add value='properties' to emit MDC properties -->
-    <member value='properties'/>
+    <!-- Add value='dd.trace_id' to extract the automatically-injected 'dd.trace_id' property -->
+    <!-- Emit a JSON property 'dd.trace_id' by extracing the logger's property 'dd.trace_id' -->
+    <!-- Emit a JSON property 'dd.span_id' by extracing the logger's property 'dd.span_id' -->
+    <member value='dd.trace_id' />
+    <member value='dd.span_id' />
   </layout>
 ```
 
@@ -61,24 +64,34 @@ var log = new LoggerConfiguration()
 For NLog version 4.6+:
 
 ```xml
-  <!-- Add includeMdlc="true" to emit MDC properties -->
-  <layout xsi:type="JsonLayout" includeMdlc="true">
+  <layout xsi:type="JsonLayout">
     <attribute name="date" layout="${longdate}" />
     <attribute name="level" layout="${level:upperCase=true}"/>
     <attribute name="message" layout="${message}" />
     <attribute name="exception" layout="${exception:format=ToString}" />
+
+    <!-- Emit a JSON property 'dd.trace_id' by extracing the logger's MDLC property 'dd.trace_id' -->
+    <!-- Emit a JSON property 'dd.span_id' by extracing the logger's MDLC property 'dd.span_id' -->
+    <!-- NOTE: Automatic injection on NLog 4.6+ adds the properties to the MDLC collection, not MDC -->
+    <attribute name="dd.trace_id" layout="${mdc:item=dd.trace_id}"/>
+    <attribute name="dd.span_id" layout="${mdc:item=dd.span_id}"/>
   </layout>
 ```
 
 For NLog version 4.5:
 
 ```xml
-  <!-- Add includeMdc="true" to emit MDC properties -->
-  <layout xsi:type="JsonLayout" includeMdc="true">
+  <layout xsi:type="JsonLayout">
     <attribute name="date" layout="${longdate}" />
     <attribute name="level" layout="${level:upperCase=true}"/>
     <attribute name="message" layout="${message}" />
     <attribute name="exception" layout="${exception:format=ToString}" />
+
+    <!-- Emit a JSON property 'dd.trace_id' by extracing the logger's MDC property 'dd.trace_id' -->
+    <!-- Emit a JSON property 'dd.span_id' by extracing the logger's MDC property 'dd.span_id' -->
+    <!-- NOTE: Automatic injection on NLog 4.5 adds the properties to the MDC collection, not MDLC -->
+    <attribute name="dd.trace_id" layout="${mdc:item=dd.trace_id}"/>
+    <attribute name="dd.span_id" layout="${mdc:item=dd.span_id}"/>
   </layout>
 ```
 
