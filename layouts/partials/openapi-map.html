@@ -1,0 +1,30 @@
+<!--
+{{/*
+------------------
+Description:
+------------------
+
+Takes the initial ref and returns a map / object
+
+------------------
+Usage:
+------------------
+
+For single files just pass the filename without yaml extension e.g
+
+{{ $ref := (index $schema "$ref") }}
+{{ $refkey := replace $ref "#/components/schemas/" "" }}
+
+{{ $mapData := partial "jsonFromRef.html" (dict "context" $dot "ref" $ref)}}
+{{ $jsonData := $mapData | jsonify}}
+
+*/}}
+-->
+{{ $dot := .context }}
+{{ $ref := .ref }}
+{{ $refkey := replace $ref "#/components/schemas/" "" }}
+{{ $schemaJSON := partial "openapi-recurse-ref.html" (dict "context" $dot "refkey" $refkey) }}
+{{ $s := newScratch }}
+{{ $s.SetInMap "data" "properties" $schemaJSON }}
+{{ $data := ($s.Get "data") }}
+{{ return $data }}

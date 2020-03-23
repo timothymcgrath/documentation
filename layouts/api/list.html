@@ -150,8 +150,12 @@
                             <div role="tabpanel" class="tab-pane {{ if eq $response_code "200"}} active {{end}}" id="{{ $context.action.operationId }}-{{ $response_code }}">
                                 {{ range $content := $response.content }}
                                     {{ range $schema := $content }}
+
                                         {{ $ref := (index $schema "$ref") }}
                                         {{ $refkey := replace $ref "#/components/schemas/" "" }}
+
+                                        {{ $mapData := partial "openapi-map.html" (dict "context" $dot "ref" $ref)}}
+                                        {{ $jsonData := $mapData | jsonify}}
                                         
                                         <ul class="nav nav-tabs border-none" role="tablist" style="z-index: 10;">
                                             <li class="nav-item">
@@ -178,8 +182,8 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            {{ range $key, $value := $schema.properties }}
-                                                                {{ $requredElem := cond (eq .required true) "<sup class='text-danger'>*</sup>" ""}}
+                                                            {{ range $key, $value := $mapData.properties }}
+                                                                {{ $requredElem := cond (eq $value.required true) "<sup class='text-danger'>*</sup>" ""}}
                                                                 <tr>
                                                                     <!-- <th scope="row">1</th> -->
                                                                     <td>{{ $requredElem | safeHTML }}{{ $key }}</td>
@@ -193,10 +197,7 @@
                                                 {{ end }}
                                             </div>
                                             <div role="tabpanel" class="tab-pane js-tab-example" id="{{ $context.action.operationId }}-{{ $response_code }}-example">
-                                                {{ with $refkey }}
-                                                                                                    
-                                                {{ highlight ((index $d.components.schemas $refkey) | jsonify) "json" "" }}
-                                                {{ end }}
+                                                {{ highlight $jsonData "json" "" }}
                                             </div>
                                         </div>
                                     {{ end }}

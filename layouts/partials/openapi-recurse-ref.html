@@ -1,0 +1,39 @@
+<!--
+{{/*
+------------------
+Description:
+------------------
+
+recursively follow ref and return map
+
+------------------
+Usage:
+------------------
+
+{{ $schemaJSON := partial "openapi-recurse-ref.html" (dict "context" $dot "refkey" $refkey) }}
+
+*/}}
+-->
+{{ $input_refkey := .refkey }}
+{{ $dot := .context }}
+{{ $d := $dot.Site.Data.api.v1.full_spec }}
+
+{{ $s := newScratch }}
+
+{{ with $input_refkey }}
+  {{ $input_schema := (index $d.components.schemas . ) }}
+  {{ range $key, $value := $input_schema.properties }}
+      {{ $ref := (index $value "$ref") }}
+      {{ with $ref }}
+        {{ $refkey := replace . "#/components/schemas/" "" }}
+        {{ with $refkey }}
+            {{ $nestedData := partial "openapi-recurse-ref.html" (dict "context" $dot "refkey" $refkey) }}
+            {{ $s.SetInMap "data" $key $nestedData }}
+        {{ end }}
+      {{ else }}
+        {{ $s.SetInMap "data" $key $value }}
+      {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return ($s.Get "data") }}
