@@ -183,13 +183,24 @@
                                                         </thead>
                                                         <tbody>
                                                             {{ range $key, $value := $mapData.properties }}
-                                                                {{ $requredElem := cond (eq $value.required true) "<sup class='text-danger'>*</sup>" ""}}
-                                                                <tr>
-                                                                    <!-- <th scope="row">1</th> -->
-                                                                    <td>{{ $requredElem | safeHTML }}{{ $key }}</td>
-                                                                    <td>{{ $value.type }}</td>
-                                                                    <td>{{ $response.description | markdownify }}</td>
-                                                                </tr>
+                                                                {{ with $value }}
+                                                                    {{ with $value.type }}
+                                                                      {{ $requredElem := cond (eq ($value.required) true) "<sup class='text-danger'>*</sup>" ""}}
+                                                                      <tr>
+                                                                          <!-- <th scope="row">1</th> -->
+                                                                          <td>{{ $requredElem | safeHTML }}{{ $key }}</td>
+                                                                          <td>{{ $value.type }}</td>
+                                                                          <td>{{ $response.description | markdownify }}</td>
+                                                                      </tr>
+                                                                    {{ else }}
+                                                                      <tr>
+                                                                          <!-- <th scope="row">1</th> -->
+                                                                          <td>{{ $key }}<br/>{{ $value | jsonify }}</td>
+                                                                          <td>&nbsp;</td>
+                                                                          <td>&nbsp;</td>
+                                                                      </tr>
+                                                                    {{ end }}
+                                                              {{ end }}
                                                             {{ end }}
                                                         </tbody>
                                                     </table>
