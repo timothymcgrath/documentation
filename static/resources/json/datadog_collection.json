@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2f439139-33c5-4f05-8fec-940d9f8d398e",
+		"_postman_id": "9093ba50-bbb1-4b89-9598-43a7a75dc3ca",
 		"name": "Datadog API Collection",
 		"description": "Collection of all Datadog Public endpoints.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -344,99 +344,6 @@
 							"body": "{\n    \"comment\": {\n        \"handle\": \"test@datadoghq.com\",\n        \"id\": 1382561676571697516,\n        \"message\": \"There is a problem with the database.\",\n        \"resource\": \"/api/v1/comments/1382561676571697516\",\n        \"url\": \"/event/jump_to?event_id=1382561676571697516\"\n    }\n}"
 						},
 						{
-							"name": "400 - Bad Request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"message\": \"<MESSAGE>\",\n    \"handle\": \"<DATADOG_HANDLE>\"\n}"
-								},
-								"url": {
-									"raw": "https://api.datadoghq.com/api/v1/comments?api_key={{datadog_api_key}}&application_key={{datadog_application_key}}",
-									"protocol": "https",
-									"host": [
-										"api",
-										"datadoghq",
-										"com"
-									],
-									"path": [
-										"api",
-										"v1",
-										"comments"
-									],
-									"query": [
-										{
-											"key": "api_key",
-											"value": "{{datadog_api_key}}",
-											"description": "Your Datadog API key"
-										},
-										{
-											"key": "application_key",
-											"value": "{{datadog_application_key}}",
-											"description": "Your Datadog application key"
-										}
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 19 Apr 2019 12:38:35 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "68"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache"
-								},
-								{
-									"key": "X-DD-VERSION",
-									"value": "35.1246853"
-								},
-								{
-									"key": "DD-POOL",
-									"value": "dogweb_sameorig"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15724800;"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"The value provided for parameter 'handle' is invalid\"\n    ]\n}"
-						},
-						{
 							"name": "200 - OK",
 							"originalRequest": {
 								"method": "POST",
@@ -544,6 +451,99 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"comment\": {\n        \"url\": \"/event/event?id=4889126983613267970\",\n        \"resource\": \"/api/v1/comments/4889126983613267970\",\n        \"message\": \"<MESSAGE>\",\n        \"handle\": \"test@datadoghq.com\",\n        \"id\": 4889126983613267970\n    }\n}"
+						},
+						{
+							"name": "400 - Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\": \"<MESSAGE>\",\n    \"handle\": \"<DATADOG_HANDLE>\"\n}"
+								},
+								"url": {
+									"raw": "https://api.datadoghq.com/api/v1/comments?api_key={{datadog_api_key}}&application_key={{datadog_application_key}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"datadoghq",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"comments"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{datadog_api_key}}",
+											"description": "Your Datadog API key"
+										},
+										{
+											"key": "application_key",
+											"value": "{{datadog_application_key}}",
+											"description": "Your Datadog application key"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 19 Apr 2019 12:38:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-DD-VERSION",
+									"value": "35.1246853"
+								},
+								{
+									"key": "DD-POOL",
+									"value": "dogweb_sameorig"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"The value provided for parameter 'handle' is invalid\"\n    ]\n}"
 						}
 					]
 				},
@@ -591,7 +591,6 @@
 								{
 									"key": "COMMENT_ID",
 									"value": "<EVENT_ID>",
-									"type": "string",
 									"description": "ID of the comment to edit."
 								}
 							]
@@ -1091,7 +1090,6 @@
 								{
 									"key": "DASHBOARD_ID",
 									"value": "<DASHBOARD_ID>",
-									"type": "string",
 									"description": "ID of the Dashboard to update"
 								}
 							]
@@ -1264,7 +1262,6 @@
 								{
 									"key": "DASHBOARD_ID",
 									"value": "<DASHBOARD_ID>",
-									"type": "string",
 									"description": "Id of the Dashboar to delete"
 								}
 							]
@@ -1431,7 +1428,6 @@
 								{
 									"key": "DASHBOARD_ID",
 									"value": "<DASHBOARD_ID>",
-									"type": "string",
 									"description": "Id of the Dashboard to GET"
 								}
 							]
@@ -1665,7 +1661,6 @@
 								{
 									"key": "DASHBOARD_LIST_ID",
 									"value": "<DASHBOARD_LIST_ID>",
-									"type": "string",
 									"description": "Dashboard list ID to fetch"
 								}
 							]
@@ -2144,7 +2139,6 @@
 								{
 									"key": "DASHBOARD_LIST_ID",
 									"value": "<DASHBOARD_LIST_ID>",
-									"type": "string",
 									"description": "The ID of the Dashboard list to update"
 								}
 							]
@@ -2377,7 +2371,6 @@
 								{
 									"key": "DASHBOARD_LIST_ID",
 									"value": "<DASHBOARD_LIST_ID>",
-									"type": "string",
 									"description": "ID of the Dashboard list to delete"
 								}
 							]
@@ -2556,7 +2549,6 @@
 								{
 									"key": "DASHBOARD_LIST_ID",
 									"value": "<DASHBOARD_LIST_ID>",
-									"type": "string",
 									"description": "ID of the Dashbord list to get items from"
 								}
 							]
@@ -2668,7 +2660,6 @@
 								{
 									"key": "DASHBOARD_LIST_ID",
 									"value": "<DASHBOARD_LIST_ID>",
-									"type": "string",
 									"description": "ID of the Dashboard list to add item into"
 								}
 							]
@@ -2724,7 +2715,6 @@
 								{
 									"key": "DASHBOARD_LIST_ID",
 									"value": "<DASHBOARD_LIST_ID>",
-									"type": "string",
 									"description": "ID of the Dashboard list to update"
 								}
 							]
@@ -2780,7 +2770,6 @@
 								{
 									"key": "DASHBOARD_LIST_ID",
 									"value": "<DASHBOARD_LIST_ID>",
-									"type": "string",
 									"description": "ID of the Dashboard list to delete items from"
 								}
 							]
@@ -2934,7 +2923,6 @@
 								{
 									"key": "DOWNTIME_ID",
 									"value": "<DOWNTIME_ID>",
-									"type": "string",
 									"description": "ID of the downtime to update"
 								}
 							]
@@ -2983,7 +2971,6 @@
 								{
 									"key": "DOWNTIME_ID",
 									"value": "<DOWNTIME_ID>",
-									"type": "string",
 									"description": "ID of the downtime to delete"
 								}
 							]
@@ -3123,7 +3110,6 @@
 								{
 									"key": "DOWNTIME_ID",
 									"value": "<DOWNTIME_ID>",
-									"type": "string",
 									"description": "ID of the downtime to fetch"
 								}
 							]
@@ -3445,7 +3431,6 @@
 								{
 									"key": "EMBED_ID",
 									"value": "<EMBED_ID>",
-									"type": "string",
 									"description": "ID of the embed to fetch"
 								}
 							]
@@ -3492,7 +3477,6 @@
 								{
 									"key": "EMBED_ID",
 									"value": "<EMBED_ID>",
-									"type": "string",
 									"description": "ID of the Embed to enable"
 								}
 							]
@@ -3539,7 +3523,6 @@
 								{
 									"key": "EMBED_ID",
 									"value": "<EMBED_ID>",
-									"type": "string",
 									"description": "ID of the embed to revoke"
 								}
 							]
@@ -3739,7 +3722,6 @@
 								{
 									"key": "EVENT_ID",
 									"value": "<EVENT_ID>",
-									"type": "string",
 									"description": "ID of the event to fetch"
 								}
 							]
@@ -4469,7 +4451,6 @@
 								{
 									"key": "HOSTNAME",
 									"value": "<HOSTNAME>",
-									"type": "string",
 									"description": "Name of the host to mute"
 								}
 							]
@@ -4581,7 +4562,6 @@
 								{
 									"key": "HOSTNAME",
 									"value": "<HOSTNAME>",
-									"type": "string",
 									"description": "Name of the host to unmute"
 								}
 							]
@@ -5001,108 +4981,6 @@
 									},
 									"response": [
 										{
-											"name": "List available namespace rules",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "https://api.datadoghq.com/api/v1/integration/aws/available_namespace_rules?api_key={{datadog_api_key}}&application_key={{datadog_application_key}}",
-													"protocol": "https",
-													"host": [
-														"api",
-														"datadoghq",
-														"com"
-													],
-													"path": [
-														"api",
-														"v1",
-														"integration",
-														"aws",
-														"available_namespace_rules"
-													],
-													"query": [
-														{
-															"key": "api_key",
-															"value": "{{datadog_api_key}}",
-															"description": "Your Datadog API key"
-														},
-														{
-															"key": "application_key",
-															"value": "{{datadog_application_key}}",
-															"description": "Your Datadog application key"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Date",
-													"value": "Mon, 06 May 2019 15:26:10 GMT"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												},
-												{
-													"key": "Transfer-Encoding",
-													"value": "chunked"
-												},
-												{
-													"key": "Connection",
-													"value": "keep-alive"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept-Encoding"
-												},
-												{
-													"key": "Pragma",
-													"value": "no-cache"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache"
-												},
-												{
-													"key": "Set-Cookie",
-													"value": "DD-PSHARD=193; Max-Age=604800; Path=/; expires=Mon, 13-May-2019 15:26:09 GMT; secure; HttpOnly"
-												},
-												{
-													"key": "X-DD-VERSION",
-													"value": "35.1295692"
-												},
-												{
-													"key": "X-DD-Debug",
-													"value": "c4aq40z3KDGIu7BkYTlUd0iZ+hCVqUX2FQHrdHjK4gPuZVw/LYvbdogVHHOtojAR"
-												},
-												{
-													"key": "Content-Encoding",
-													"value": "gzip"
-												},
-												{
-													"key": "DD-POOL",
-													"value": "dogweb_sameorig"
-												},
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "Strict-Transport-Security",
-													"value": "max-age=15724800;"
-												}
-											],
-											"cookie": [],
-											"body": "[\n    \"api_gateway\",\n    \"application_elb\",\n    \"appsync\",\n    \"auto_scaling\",\n    \"billing\",\n    \"budgeting\",\n    \"cloudfront\",\n    \"cloudsearch\",\n    \"cloudwatch_events\",\n    \"cloudwatch_logs\",\n    \"codebuild\",\n    \"collect_custom_metrics\",\n    \"crawl_alarms\",\n    \"ddos_protection\",\n    \"directconnect\",\n    \"dms\",\n    \"documentdb\",\n    \"dynamodb\",\n    \"ebs\",\n    \"ec2\",\n    \"ec2api\",\n    \"ec2spot\",\n    \"ecs\",\n    \"efs\",\n    \"elasticache\",\n    \"elasticbeanstalk\",\n    \"elastictranscoder\",\n    \"elb\",\n    \"emr\",\n    \"es\",\n    \"firehose\",\n    \"gamelift\",\n    \"iot\",\n    \"kinesis\",\n    \"kinesis_analytics\",\n    \"kms\",\n    \"lambda\",\n    \"lex\",\n    \"ml\",\n    \"mq\",\n    \"nat_gateway\",\n    \"network_elb\",\n    \"opsworks\",\n    \"polly\",\n    \"rds\",\n    \"redshift\",\n    \"rekognition\",\n    \"route53\",\n    \"s3\",\n    \"sagemaker\",\n    \"ses\",\n    \"sns\",\n    \"sqs\",\n    \"state_machine\",\n    \"storage_gateway\",\n    \"swf\",\n    \"vpn\",\n    \"waf\",\n    \"workspaces\",\n    \"xray\"\n]"
-										},
-										{
 											"name": "200 - OK",
 											"originalRequest": {
 												"method": "GET",
@@ -5179,6 +5057,108 @@
 												{
 													"key": "X-DD-Debug",
 													"value": "/GVHE8sGGDu2Pwj4vkrLHXcvRNw6txpVQGGgaqarvn67YsIjXAZ36tYtYz+JhwVU"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "gzip"
+												},
+												{
+													"key": "DD-POOL",
+													"value": "dogweb_sameorig"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15724800;"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    \"api_gateway\",\n    \"application_elb\",\n    \"appsync\",\n    \"auto_scaling\",\n    \"billing\",\n    \"budgeting\",\n    \"cloudfront\",\n    \"cloudsearch\",\n    \"cloudwatch_events\",\n    \"cloudwatch_logs\",\n    \"codebuild\",\n    \"collect_custom_metrics\",\n    \"crawl_alarms\",\n    \"ddos_protection\",\n    \"directconnect\",\n    \"dms\",\n    \"documentdb\",\n    \"dynamodb\",\n    \"ebs\",\n    \"ec2\",\n    \"ec2api\",\n    \"ec2spot\",\n    \"ecs\",\n    \"efs\",\n    \"elasticache\",\n    \"elasticbeanstalk\",\n    \"elastictranscoder\",\n    \"elb\",\n    \"emr\",\n    \"es\",\n    \"firehose\",\n    \"gamelift\",\n    \"iot\",\n    \"kinesis\",\n    \"kinesis_analytics\",\n    \"kms\",\n    \"lambda\",\n    \"lex\",\n    \"ml\",\n    \"mq\",\n    \"nat_gateway\",\n    \"network_elb\",\n    \"opsworks\",\n    \"polly\",\n    \"rds\",\n    \"redshift\",\n    \"rekognition\",\n    \"route53\",\n    \"s3\",\n    \"sagemaker\",\n    \"ses\",\n    \"sns\",\n    \"sqs\",\n    \"state_machine\",\n    \"storage_gateway\",\n    \"swf\",\n    \"vpn\",\n    \"waf\",\n    \"workspaces\",\n    \"xray\"\n]"
+										},
+										{
+											"name": "List available namespace rules",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://api.datadoghq.com/api/v1/integration/aws/available_namespace_rules?api_key={{datadog_api_key}}&application_key={{datadog_application_key}}",
+													"protocol": "https",
+													"host": [
+														"api",
+														"datadoghq",
+														"com"
+													],
+													"path": [
+														"api",
+														"v1",
+														"integration",
+														"aws",
+														"available_namespace_rules"
+													],
+													"query": [
+														{
+															"key": "api_key",
+															"value": "{{datadog_api_key}}",
+															"description": "Your Datadog API key"
+														},
+														{
+															"key": "application_key",
+															"value": "{{datadog_application_key}}",
+															"description": "Your Datadog application key"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Mon, 06 May 2019 15:26:10 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept-Encoding"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "Set-Cookie",
+													"value": "DD-PSHARD=193; Max-Age=604800; Path=/; expires=Mon, 13-May-2019 15:26:09 GMT; secure; HttpOnly"
+												},
+												{
+													"key": "X-DD-VERSION",
+													"value": "35.1295692"
+												},
+												{
+													"key": "X-DD-Debug",
+													"value": "c4aq40z3KDGIu7BkYTlUd0iZ+hCVqUX2FQHrdHjK4gPuZVw/LYvbdogVHHOtojAR"
 												},
 												{
 													"key": "Content-Encoding",
@@ -7641,8 +7621,7 @@
 									"variable": [
 										{
 											"key": "DD_API_KEY",
-											"value": "<API_KEY_TO_GET>",
-											"type": "string"
+											"value": "<API_KEY_TO_GET>"
 										}
 									]
 								},
@@ -7693,8 +7672,7 @@
 									"variable": [
 										{
 											"key": "DD_API_KEY",
-											"value": "<API_KEY_TO_EDIT>",
-											"type": "string"
+											"value": "<API_KEY_TO_EDIT>"
 										}
 									]
 								},
@@ -7745,8 +7723,7 @@
 									"variable": [
 										{
 											"key": "DD_API_KEY",
-											"value": "<API_KEY_TO_DELETE>",
-											"type": "string"
+											"value": "<API_KEY_TO_DELETE>"
 										}
 									]
 								},
@@ -7899,8 +7876,7 @@
 									"variable": [
 										{
 											"key": "DD_APPLICATION_KEY",
-											"value": "<APPLICATION_KEY_TO_GET>",
-											"type": "string"
+											"value": "<APPLICATION_KEY_TO_GET>"
 										}
 									]
 								},
@@ -7951,8 +7927,7 @@
 									"variable": [
 										{
 											"key": "DD_APPLICATION_KEY",
-											"value": "<APPLICATION_KEY_TO_EDIT>",
-											"type": "string"
+											"value": "<APPLICATION_KEY_TO_EDIT>"
 										}
 									]
 								},
@@ -8003,8 +7978,7 @@
 									"variable": [
 										{
 											"key": "DD_APPLICATION_KEY",
-											"value": "<APPLICATION_KEY_TO_DELETE>",
-											"type": "string"
+											"value": "<APPLICATION_KEY_TO_DELETE>"
 										}
 									]
 								},
@@ -8287,7 +8261,6 @@
 								{
 									"key": "INDEX_NAME",
 									"value": "<INDEX_NAME>",
-									"type": "string",
 									"description": "Name of the index to get."
 								}
 							]
@@ -8344,7 +8317,6 @@
 								{
 									"key": "INDEX_NAME",
 									"value": "main",
-									"type": "string",
 									"description": "Name of the index"
 								}
 							]
@@ -8630,7 +8602,6 @@
 								{
 									"key": "PIPELINE_ID",
 									"value": "<PIPELINE_ID>",
-									"type": "string",
 									"description": "ID of the Pipeline to get."
 								}
 							]
@@ -8735,7 +8706,6 @@
 								{
 									"key": "PIPELINE_ID",
 									"value": "<PIPELINE_ID>",
-									"type": "string",
 									"description": "ID of the pipeline to update"
 								}
 							]
@@ -8782,7 +8752,6 @@
 								{
 									"key": "PIPELINE_ID",
 									"value": "<PIPELINE_ID>",
-									"type": "string",
 									"description": "ID of the pipeline to delete"
 								}
 							]
@@ -9082,7 +9051,6 @@
 								{
 									"key": "METRIC_NAME",
 									"value": "<METRIC_NAME>",
-									"type": "string",
 									"description": "Name of the metric to retrieve metadata from."
 								}
 							]
@@ -9141,7 +9109,6 @@
 								{
 									"key": "METRIC_NAME",
 									"value": "<METRIC_NAME>",
-									"type": "string",
 									"description": "Name of the metric to edit metadata from."
 								}
 							]
@@ -9325,7 +9292,6 @@
 								{
 									"key": "MONITOR_ID",
 									"value": "<MONITOR_ID_TO_GET>",
-									"type": "string",
 									"description": "Id of the monitor you want to get info from"
 								}
 							]
@@ -9378,7 +9344,6 @@
 								{
 									"key": "MONITOR_ID",
 									"value": "<MONITOR_ID_TO_EDIT>",
-									"type": "string",
 									"description": "Id of the monitor you want to edit info from"
 								}
 							]
@@ -9475,7 +9440,6 @@
 								{
 									"key": "MONITOR_ID",
 									"value": "<MONITOR_ID_TO_DELETE>",
-									"type": "string",
 									"description": "Id of the monitor to Delete"
 								}
 							]
@@ -9572,7 +9536,6 @@
 								{
 									"key": "MONITOR_ID",
 									"value": "<MONITOR_ID_TO_MUTE>",
-									"type": "string",
 									"description": "ID of the monitor to mute."
 								}
 							]
@@ -9626,7 +9589,6 @@
 								{
 									"key": "MONITOR_ID",
 									"value": "<MONITOR_ID_TO_UNMUTE>",
-									"type": "string",
 									"description": "ID of the monitor to un-mute."
 								}
 							]
@@ -9800,7 +9762,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api.datadoghq.{{datadog_site}}/api/v1/monitor/search?",
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v1/monitor/search",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -10010,7 +9972,6 @@
 								{
 									"key": "PUBLIC_ID",
 									"value": "<DATADOG_ORG_PUBLIC_ID_TO_GET>",
-									"type": "string",
 									"description": "Datadog public organization ID."
 								}
 							]
@@ -10103,7 +10064,6 @@
 								{
 									"key": "PUBLIC_ID",
 									"value": "<DATADOG_ORG_PUBLIC_ID_TO_UPDATE>",
-									"type": "string",
 									"description": "Public ID of a Datadog organisation."
 								}
 							]
@@ -10159,7 +10119,6 @@
 								{
 									"key": "PUBLIC_ID",
 									"value": "<DATADOG_ORG_PUBLIC_ID>",
-									"type": "string",
 									"description": "Public ID of a Datadog organisation."
 								}
 							]
@@ -10290,7 +10249,6 @@
 								{
 									"key": "TEST_ID",
 									"value": "<SYNTHETICS_TEST_ID>",
-									"type": "string",
 									"description": "ID of the synthetics test to start/pause"
 								}
 							]
@@ -10345,7 +10303,6 @@
 								{
 									"key": "PUBLIC_ID",
 									"value": "<SYNTHETICS_TEST_PUBLIC_ID>",
-									"type": "string",
 									"description": "ID of the test to Edit"
 								}
 							]
@@ -10446,7 +10403,6 @@
 								{
 									"key": "PUBLIC_ID",
 									"value": "<SYNTHETICS_TEST_PUBLIC_ID>",
-									"type": "string",
 									"description": "ID of the synthetics test to get results from"
 								}
 							]
@@ -10501,13 +10457,11 @@
 								{
 									"key": "PUBLIC_ID",
 									"value": "<SYNTHETICS_TEST_PUBLIC_ID>",
-									"type": "string",
 									"description": "ID of the synthetics test to get results from"
 								},
 								{
 									"key": "RESULT_ID",
 									"value": "<SYNTHETICS_TEST_RESULT_ID>",
-									"type": "string",
 									"description": "ID of the synthetics test result."
 								}
 							]
@@ -10604,7 +10558,6 @@
 								{
 									"key": "PUBLIC_ID",
 									"value": "SYNTHETICS_TEST_PUBLIC_ID",
-									"type": "string",
 									"description": "ID of the synthetics test to get results from"
 								}
 							]
@@ -10790,7 +10743,6 @@
 								{
 									"key": "HOSTNAME",
 									"value": "<HOSTNAME>",
-									"type": "string",
 									"description": "Name of the host to retrieve tags from."
 								}
 							]
@@ -10844,7 +10796,6 @@
 								{
 									"key": "HOSTNAME",
 									"value": "<HOSTNAME>",
-									"type": "string",
 									"description": "Host name to add tags to."
 								}
 							]
@@ -10898,7 +10849,6 @@
 								{
 									"key": "HOSTNAME",
 									"value": "<HOSTNAME>",
-									"type": "string",
 									"description": "Hostname to update tags of."
 								}
 							]
@@ -10952,7 +10902,6 @@
 								{
 									"key": "HOSTNAME",
 									"value": "<HOSTNAME>",
-									"type": "string",
 									"description": "Hostname to delete tag from."
 								}
 							]
@@ -11892,6 +11841,690 @@
 							""
 						]
 					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get all roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"equals": true,
+								"key": "DD-API-KEY",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "page[size]",
+									"value": "10",
+									"description": "Number of roles to return in a call",
+									"disabled": true
+								},
+								{
+									"key": "page[number]",
+									"value": "0",
+									"description": "Page if the number of roles is less than the total number of roles available",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "Sorts the response, can be sorted by name, modified_at and user_count",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "",
+									"description": "Searches for a string",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get role details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"equals": true,
+								"key": "DD-API-KEY",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DD-API-KEY",
+								"type": "text",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\" :\n\t{\n\t\t\"type\" : \"roles\",\n\t\t\"attributes\": {\n\t\t\t\"name\" : \"<ROLE_NAME>\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role name",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "DD-API-KEY",
+								"type": "text",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\" :\n\t{\n\t\t\"type\" : \"roles\",\n\t\t\"attributes\": {\n\t\t\t\"id\" : \"<ROLE_ID>\",\n\t\t\t\"name\" : \"<ROLE_NAME>\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID"
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "DD-API-KEY",
+								"type": "text",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID"
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						},
+						"description": "REQUIRES ROLE UUID"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all permissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "DD-API-KEY",
+								"type": "text",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"url": {
+							"raw": "https://app.datadoghq.com/api/v2/permissions",
+							"protocol": "https",
+							"host": [
+								"app",
+								"datadoghq",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get permissions for role",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"equals": true,
+								"key": "DD-API-KEY",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID/permissions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID",
+								"permissions"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grant permissions to role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"equals": true,
+								"key": "DD-API-KEY",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\":\n    {\n        \"type\": \"permissions\",\n        \"id\": \"<PERMISSION_ID>\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID/permissions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID",
+								"permissions"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke permission from role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "DD-API-KEY",
+								"type": "text",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\":\n    {\n        \"type\": \"permissions\",\n        \"id\": \"<PERMISSION_ID>\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID/permissions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID",
+								"permissions"
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						},
+						"description": "REQUIRES ROLE UUID"
+					},
+					"response": []
+				},
+				{
+					"name": "Grant permissions to role with limited scope",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"equals": true,
+								"key": "DD-API-KEY",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\":\n    {\n        \"type\": \"permissions\",\n        \"id\": \"<PERMISSION_ID>\",\n        \"scope\": {\n        \t\"indexes\": [\n        \t\t\"<SCOPE_NAME>\"\n        \t\t]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID/permissions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID",
+								"permissions"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						},
+						"description": "Advanced feature useful for certain log permissions: logs_read_index_data, logs_write_exclusion_filters and logs_write_processors. Allows user to restrict the permission to a named index or specific pipeline.\n\nFormat of scope object depends on the permission and what it can restrict, for example if restricting log_read_index_data you can restrict it to an index named \"main\" with the scope object of \"indexes\" : [\"main\"]"
+					},
+					"response": []
+				},
+				{
+					"name": "Get users of a role",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"equals": true,
+								"key": "DD-API-KEY",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page[size]",
+									"value": "10",
+									"description": "Number of users to return for a given page.",
+									"disabled": true
+								},
+								{
+									"key": "page[number]",
+									"value": "0",
+									"description": "Specific page number to return.",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "Sort users depending on the given field. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example: sort=-name.\nOptions: name, email, status",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": null,
+									"description": "Filter all users by the given string.",
+									"disabled": true
+								},
+								{
+									"key": "filter[status]",
+									"value": "active",
+									"description": "Returns only users with the status filtered. Options include active, pending and disabled.",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a user to a role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"equals": true,
+								"key": "DD-API-KEY",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\":\n    {\n        \"type\": \"users\",\n        \"id\": \"<USER_ID>\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID",
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove user from a role",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "DD-API-KEY",
+								"type": "text",
+								"value": "{{datadog_api_key}}"
+							},
+							{
+								"key": "DD-APPLICATION-KEY",
+								"type": "text",
+								"value": "{{datadog_application_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\":\n    {\n        \"type\": \"users\",\n        \"id\": \"<USER_ID>\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.datadoghq.{{datadog_site}}/api/v2/roles/:ROLE_UUID/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"datadoghq",
+								"{{datadog_site}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"roles",
+								":ROLE_UUID",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "ROLE_UUID",
+									"value": ""
+								}
+							]
+						},
+						"description": "REQUIRES ROLE UUID"
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
