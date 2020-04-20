@@ -105,5 +105,6 @@
   "only_content_level": true,
   "user_agent": "Googlebot",
   "nb_hits": 94978,
+  "js_render": true,
   "use_anchors": true
 }
