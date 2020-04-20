@@ -114,5 +114,6 @@
   "user_agent": "Googlebot",
   "nb_hits": 94978,
   "js_render": true,
+  "use_anchors": true,
   "js_wait": 1
 }
