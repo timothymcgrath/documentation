@@ -70,7 +70,7 @@ Next, enable the Datadog features that you'd like to use: [APM][5], [Logs][6]
 
 **Note**: For a full list of the Datadog chart's configurable parameters and their default values, refer to the [Datadog Helm repository README][7].
 
-### Upgrading from chart v1.x
+**Upgrading from chart v1.x**:
 
 The Datadog chart has been refactored in v2.0 to regroup the `values.yaml` parameters in a more logical way.
 

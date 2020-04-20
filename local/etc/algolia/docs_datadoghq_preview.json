@@ -2,16 +2,8 @@
   "index_name": "docsearch_docs_preview",
   "start_urls": [
     {
-      "url": "https://docs.datadoghq.com(?P<localisation>.*?)/(?P<section>.*?)/",
+      "url": "https://docs-staging.datadoghq.com/gus/algolia-tests/agent/",
       "selectors_key": "docs",
-      "variables": {
-        "localisation": [
-          ""
-        ],
-        "section": [
-          "agent"
-        ]
-      },
       "tags": [
         "docs"
       ],
