@@ -53,7 +53,7 @@ Then [configure the Datadog Agent](#configure-the-datadog-agent) to collect pyth
 ### Log into a file
 
 {{< tabs >}}
-{{% tab "JSON_log-formatter" %}}
+{{% tab "JSON-log-formatter" %}}
 
 Usage example with [JSON-log-formatter][1]:
 
