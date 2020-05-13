@@ -652,6 +652,12 @@ const rowRecursive = (tableType, data, isNested, requiredFields=[], level = 0, p
             newParentKey = "additionalProperties";
           }
         }
+        // for widgets
+        if(key === "definition" && value.discriminator) {
+          childData = Object.keys(value.discriminator.mapping)
+            .map((mapkey, indx) => { return {[mapkey]: value.oneOf[indx]} })
+            .reduce((obj, item) => ({...obj, ...item}), {});
+        }
 
         const isReadOnly = isReadOnlyRow(value);
 
