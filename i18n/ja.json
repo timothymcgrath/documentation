@@ -234,5 +234,59 @@
 
   "type": {
     "other": "種類"
+  },
+  "feel_free_contribute": {
+    "other": "Feel free to Contribute"
+  },
+  "mistake_in_docs": {
+    "other": "Mistake in the Docs"
+  },
+  "groups_return_to_": {
+    "other": "Back to"
+  },
+  "table_of_contents_heading": {
+    "other": "On this Page"
+  },
+  "edit": {
+    "other": "Edit"
+  },
+  "overview": {
+    "other": "Overview"
+  },
+  "arguments": {
+    "other": "Arguments"
+  },
+  "path_parameters": {
+    "other": "Path Parameters"
+  },
+  "query_strings": {
+    "other": "Query Strings"
+  },
+  "header_parameters": {
+    "other": "Header Parameters"
+  },
+  "request": {
+    "other": "Request"
+  },
+  "model": {
+    "other": "Model"
+  },
+  "example": {
+    "other": "Example"
+  },
+  "copy": {
+    "other": "Copy"
+  },
+  "response": {
+    "other": "Response"
+  },
+  "code_example": {
+    "other": "Code Example"
+  },
+  "name": {
+    "other": "Name"
+  },
+  "description": {
+    "other": "Description"
   }
 }
