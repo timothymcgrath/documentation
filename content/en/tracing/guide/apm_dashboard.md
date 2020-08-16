@@ -65,7 +65,7 @@ This guides walks you through adding trace metrics to a dashboard, correlating t
 
 6. **Drag another timeseries to the placeholder tile**
 
-    In this example two different types of metrics are added to a graph, a `trace.*` and a `runtime.*` one. Combined, these metrics allow you to correlate information between requests and code runtime performances. Specificallly, the latency of a service is displayed next to the thread count, knowing that latency spikes might be assocaited with an increase in the thraed count:
+    In this example two different types of metrics are added to a graph, a `trace.*` and a `runtime.*` one. Combined, these metrics allow you to correlate information between requests and code runtime performances. Specificallly, the latency of a service is displayed next to the thread count, knowing that latency spikes might be associated with an increase in the thraed count:
 
     1. First, add `trace.rack.reqesusts.errors` metric into the widget:
 
